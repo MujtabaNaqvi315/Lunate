@@ -6,7 +6,6 @@ function Home (){
 
     useEffect(() => {
         $('.home-heading').each(function () {
-            console.log("useeffect");
             let text = $(this).text();
             // Add a full stop to the end of each word
             let newText = text.split(' ').map(word => {

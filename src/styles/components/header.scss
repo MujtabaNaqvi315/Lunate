@@ -1,0 +1,33 @@
+.header {
+    background: transparent;
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    padding: 3.75rem 6.25rem 4.5rem;
+
+    .header-wrapper {
+        display: flex;
+        justify-content: space-between;
+
+        .header-lists {
+
+            .header-list {
+
+                .main-menu {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                    display: flex;
+
+                    .menu-item {
+                        
+                        a {
+                            text-decoration: none;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
