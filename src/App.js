@@ -1,8 +1,9 @@
 import './styles/App.css';
+import Home from './components/Home';
 
 function App() {
   return (
-    <h1>h</h1>
+    <Home />
   );
 }
 
