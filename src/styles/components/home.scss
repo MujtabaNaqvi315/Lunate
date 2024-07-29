@@ -1,0 +1,34 @@
+.home {
+    background: url('../../assets/images/Hero\ Banner.png');
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 0 4.99rem 6.25rem;
+
+    .home-heading {
+        font-family: 'Space Grotesk', Times, serif;
+        font-weight: 700;
+        font-size: 7.5rem;
+        margin: 0;
+        padding: 0 0 2.5rem;
+        max-width: 52.7rem;
+        line-height: 1.1;
+        letter-spacing: -.3rem;
+
+        .full-stop {
+            color: #E0D4BC;
+        }
+    }
+
+    .home-description {
+        font-family: 'Varela', Times, serif;
+        font-weight: 400;
+        font-size: 2rem;
+        margin: 0;
+        max-width: 52rem;
+    }
+    
+
+}
