@@ -106,6 +106,43 @@
                                     stroke: #000;
                                 }
                             }
+
+                            &:hover:not(.contact-lang) {
+
+                                a {
+                                    color: #A68B5C;
+
+                                    svg {
+                                        stroke: #A68B5C;
+                                        transform: rotate(180deg);
+                                        transition: all .3s ease-in-out;
+                                    }
+                                }
+                            }
+
+                            &.contact-lang {
+
+                                .contact-link {
+
+                                    &:hover {
+                                        color: #A68B5C;
+
+                                        svg {
+                                            stroke: #A68B5C;
+                                        }
+                                    }
+                                }
+
+                                .lang-links {
+
+                                    a {
+
+                                        &:hover {
+                                            color: #A68B5C;
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }
