@@ -5,6 +5,12 @@
     width: 100%;
     padding: 3.75rem 6.25rem 1.875rem;
     transition: all .5s ease-in-out;
+    height: 10rem;
+    overflow: hidden;
+
+    &:has(.sub-menu.active) {
+        height: 22.5rem;
+    }
 
     .header-wrapper {
         display: flex;
@@ -70,6 +76,62 @@
                                 }
                             }
                         }
+                    }
+                }
+            }
+
+            .sub-menu {
+                position: relative;
+                opacity: 0;
+                transition: all .3s ease-in-out;
+
+                &.active {
+                    opacity: 1;
+                }
+
+                .sub-menu-lists {
+                    position: absolute;
+                    top: 0;
+                    width: 100%;
+                    display: flex;
+                    margin: 4.063rem 0 0;
+
+                    .sub-menu-list-1 {
+                        list-style: none;
+                        padding: 0;
+                        margin: 0;
+
+                        .sub-menu-link {
+                            border-bottom: .06rem solid #000;
+                            padding: 0 7.14rem 1.25rem 0;
+                            margin: 0 0 1.25rem;
+
+                            a {
+                                text-decoration: none;
+                                color: #000;
+                                font-family: 'Space Grotesk', Times, serif;
+                                font-weight: 500;
+                                font-size: 1.125rem;
+                                line-height: 1.436rem;
+                            }
+                        }
+                    }
+
+                    .pattern-bg {
+                        position: absolute;
+                        top: 0;
+                        right: 7.813rem;
+                    }
+
+                    .cross-icon {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        border: .06rem solid #A68B5C;
+                        border-radius: 4rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
                     }
                 }
             }

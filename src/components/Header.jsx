@@ -1,8 +1,24 @@
 import '../styles/components/header.scss';
+import pattern1 from '../assets/images/pattern1.png';
+import $ from 'jquery';
+// import { useEffect } from 'react';
 
 function Header () {
+
+    // useEffect(() => {
+        
+    // }, []);
+
+    function handleMenuItemMouseOver () {
+        $('.sub-menu-js').addClass('active');
+    }
+
+    function handleHeaderMouseOut () {
+        $('.sub-menu-js').removeClass('active');
+    }
+
     return (
-        <div className='header'>
+        <div className='header' onMouseOut={handleHeaderMouseOut}>
             <div className='header-wrapper'>
                 <div className='header-logo'>
                     <a href="#">
@@ -14,7 +30,7 @@ function Header () {
                 <div className='header-lists'>
                     <div className='header-list'>
                         <ul className='main-menu'>
-                            <li className='menu-item'>
+                            <li className='menu-item' onMouseOver={handleMenuItemMouseOver}>
                                 <a href="#">
                                     About Lunate
                                     <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -44,7 +60,7 @@ function Header () {
                                 <a className='contact-link' href="#">
                                     Contact Us
                                     <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.35355 0.646447C8.15829 0.451184 7.84171 0.451184 7.64645 0.646447C7.45118 0.841709 7.45118 1.15829 7.64645 1.35355L13.7929 7.5H1.00195C0.725811 7.5 0.501953 7.72386 0.501953 8C0.501953 8.27614 0.725811 8.5 1.00195 8.5H13.7929L7.64645 14.6464C7.45118 14.8417 7.45118 15.1583 7.64645 15.3536C7.84171 15.5488 8.15829 15.5488 8.35355 15.3536L15.3282 8.37892C15.4346 8.28723 15.502 8.15148 15.502 8C15.502 7.84852 15.4346 7.71278 15.3282 7.62109L8.35355 0.646447Z"/>
+                                        <path fillRule="evenodd" clipRule="evenodd" d="M8.35355 0.646447C8.15829 0.451184 7.84171 0.451184 7.64645 0.646447C7.45118 0.841709 7.45118 1.15829 7.64645 1.35355L13.7929 7.5H1.00195C0.725811 7.5 0.501953 7.72386 0.501953 8C0.501953 8.27614 0.725811 8.5 1.00195 8.5H13.7929L7.64645 14.6464C7.45118 14.8417 7.45118 15.1583 7.64645 15.3536C7.84171 15.5488 8.15829 15.5488 8.35355 15.3536L15.3282 8.37892C15.4346 8.28723 15.502 8.15148 15.502 8C15.502 7.84852 15.4346 7.71278 15.3282 7.62109L8.35355 0.646447Z"/>
                                     </svg>
                                 </a>
                                 <div className='lang-links'>
@@ -53,6 +69,28 @@ function Header () {
                                 </div>
                             </li>
                         </ul>
+                    </div>
+
+                    <div className='sub-menu sub-menu-js'>
+                        <div className='sub-menu-lists'>
+                            <ul className='sub-menu-list-1'>
+                                <li className='sub-menu-link'>
+                                    <a href="#">Who We Are</a>
+                                </li>
+                                <li className='sub-menu-link'>
+                                    <a href="#">Our People</a>
+                                </li>
+                            </ul>
+                            <div className='pattern-bg'>
+                                <img src={pattern1} alt="" />
+                            </div>
+                            <div className='cross-icon'>
+                                <svg width="60" height="60" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15.8125 15.8127L28.1869 28.1871" stroke="#A68B5C" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round"/>
+                                    <path d="M15.8125 28.1873L28.1869 15.8129" stroke="#A68B5C" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round"/>
+                                </svg>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
