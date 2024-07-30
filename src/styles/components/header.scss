@@ -107,6 +107,16 @@
                                 }
                             }
 
+                            &:not(.contact-lang) {
+
+                                a {
+
+                                    svg {
+                                        transition: all .3s ease-in-out;
+                                    }
+                                }
+                            }
+
                             &:hover:not(.contact-lang) {
 
                                 a {
@@ -115,7 +125,7 @@
                                     svg {
                                         stroke: #A68B5C;
                                         transform: rotate(180deg);
-                                        transition: all .3s ease-in-out;
+                                        //transition: all .3s ease-in-out;
                                     }
                                 }
                             }
