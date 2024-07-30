@@ -13,12 +13,12 @@ function Header () {
         $('.sub-menu-js').addClass('active');
     }
 
-    function handleHeaderMouseOut () {
+    function handleHeaderMouseLeave () {
         $('.sub-menu-js').removeClass('active');
     }
 
     return (
-        <div className='header' onMouseOut={handleHeaderMouseOut}>
+        <div className='header' onMouseLeave={handleHeaderMouseLeave}>
             <div className='header-wrapper'>
                 <div className='header-logo'>
                     <a href="#">
