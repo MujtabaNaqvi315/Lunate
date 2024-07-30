@@ -3,13 +3,28 @@
     position: fixed;
     z-index: 10;
     width: 100%;
-    padding: 3.75rem 6.25rem 4.5rem;
+    padding: 3.75rem 6.25rem 1.875rem;
+    transition: all .5s ease-in-out;
 
     .header-wrapper {
         display: flex;
         justify-content: space-between;
+        align-items: center;
+
+        .header-logo {
+
+            a {
+                svg {
+                    fill: #fff;
+                }
+            }
+        }
 
         .header-lists {
+            font-family: 'Space Grotesk', Times, serif;
+            font-size: 1.125rem;
+            font-weight: 500;
+            line-height: 1.435rem;
 
             .header-list {
 
@@ -18,12 +33,79 @@
                     padding: 0;
                     margin: 0;
                     display: flex;
+                    column-gap: 2.5rem;
+                    align-items: center;
 
                     .menu-item {
                         
                         a {
                             text-decoration: none;
                             color: #fff;
+
+                            svg {
+                                margin: 0 0 .125rem .625rem;
+                                stroke: #fff;
+                            }
+                        }
+
+                        &.contact-lang {
+                            display: flex;
+                            align-items: center;
+                            column-gap: 3.75rem;
+
+                            .contact-link {
+                                padding: 1.406rem 2rem;
+                                border: .06rem solid;
+                                border-radius: 3rem;
+
+                                svg {
+                                    margin-bottom: -.125rem;
+                                }
+                            }
+
+                            .lang-links {
+
+                                .eng-lang-link {
+                                    margin-right: 1.25rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &:hover {
+        background-color: #fff;
+
+        .header-wrapper {
+
+            .header-logo{
+
+                a {
+
+                    svg{
+                        fill: #000;
+                    }
+                }
+            }
+
+            .header-lists {
+
+                .header-list {
+
+                    .main-menu {
+
+                        .menu-item {
+
+                            a {
+                                color: #000;
+
+                                svg {
+                                    stroke: #000;
+                                }
+                            }
                         }
                     }
                 }
