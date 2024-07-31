@@ -13,7 +13,7 @@ function Header () {
         $('.sub-menu-js').addClass('sub-menu-active');
         $('.menu-item-js').removeClass('menu-item-active');
         $(e.currentTarget).addClass('menu-item-active');
-        var menuItemId = $(e.currentTarget).attr('id');
+        let menuItemId = $(e.currentTarget).attr('id');
         $('.sub-menu-list').removeClass('sub-menu-list-active');
         $('#' + menuItemId + '-list').addClass('sub-menu-list-active');
         $('.sol-dropdown').removeClass('sol-dropdown-active');
