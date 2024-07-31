@@ -25,6 +25,7 @@ function Header () {
     }
 
     function handleContactLangMouseOver () {
+        $('.sub-menu-js').removeClass('sub-menu-active');
         $('.menu-item-js').removeClass('menu-item-active');
     } 
 
@@ -106,10 +107,44 @@ function Header () {
                                     <a href="#">Asset Classes</a>
                                 </li>
                                 <li className='sub-menu-link'>
-                                    <a href="#">Solutions & Products</a>
-                                    <svg className='side-dropdown-arrow' width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M9 17.9995L15 11.9995L9 5.99951" stroke="#453D43" strokeLinecap="round" strokeLinejoin="round"/>
-                                    </svg>
+                                    <a>
+                                        Solutions & Products
+                                        <svg className='side-dropdown-arrow' width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9 17.9995L15 11.9995L9 5.99951" strokeLinecap="round" strokeLinejoin="round"/>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <ul className='sol-dropdown'>
+                                    <li className='sol-dropdown-item'>
+                                        <a href="#">
+                                            Solutions
+                                        </a>
+                                    </li>
+                                    <li className='sol-dropdown-item'>
+                                        <a href="#">
+                                            ETFs Overview
+                                            <svg className='overview' width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M18 12.9995V18.9995C18 19.5299 17.7893 20.0387 17.4142 20.4137C17.0391 20.7888 16.5304 20.9995 16 20.9995H5C4.46957 20.9995 3.96086 20.7888 3.58579 20.4137C3.21071 20.0387 3 19.5299 3 18.9995V7.99951C3 7.46908 3.21071 6.96037 3.58579 6.5853C3.96086 6.21023 4.46957 5.99951 5 5.99951H11" strokeLinecap="round" strokeLinejoin="round"/>
+                                                <path d="M15 2.99951H21V8.99951" strokeLinecap="round" strokeLinejoin="round"/>
+                                                <path d="M10 13.9995L21 2.99951" strokeLinecap="round" strokeLinejoin="round"/>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </ul>
+
+                            <ul id='news-list' className='sub-menu-list'>
+                                <li className='sub-menu-link'>
+                                    <a href="#">News OR Insight 1</a>
+                                </li>
+                                <li className='sub-menu-link'>
+                                    <a href="#">News OR Insight N</a>
+                                </li>
+                            </ul>
+
+                            <ul id='careers-list' className='sub-menu-list'>
+                                <li className='sub-menu-link'>
+                                    <a href="#">Working at Lunate</a>
                                 </li>
                             </ul>
                             <div className='pattern-bg'>

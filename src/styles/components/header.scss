@@ -9,7 +9,7 @@
     overflow: hidden;
 
     &:has(.sub-menu.sub-menu-active) {
-        height: 25rem;
+        height: 25.5rem;
     }
 
     .header-wrapper {
@@ -101,6 +101,7 @@
                         padding: 0;
                         margin: 0;
                         display: none;
+                        position: relative;
 
                         &.sub-menu-list-active {
                             display: block;
@@ -110,9 +111,13 @@
                             border-bottom: .06rem solid #453D43;
                             padding: 0 0 1.25rem 0;
                             min-width: 13.5rem;
-                            margin: 0 0 1.25rem;
+                            // margin: 0 0 1.25rem;
                             transition: all .3s ease-in-out;
                             position: relative;
+
+                            &:not(:last-of-type){
+                                margin: 0 0 1.25rem;
+                            }
 
                             a {
                                 text-decoration: none;
@@ -121,11 +126,14 @@
                                 font-weight: 500;
                                 font-size: 1.125rem;
                                 line-height: 1.436rem;
+                                cursor: pointer;
+
+                                .side-dropdown-arrow {
+                                    margin: 0 0 -.4rem .625rem;
+                                    stroke: #453D43;
+                                }
                             }
 
-                            .side-dropdown-arrow {
-                                margin: 0 0 -.4rem .625rem;
-                            }
 
                             
                             &::after {
@@ -144,15 +152,77 @@
 
                                 a {
                                     color: #A68B5C;
+
+                                    .side-dropdown-arrow {
+                                        stroke: #A68B5C;
+                                    }
                                 }
 
                                 &::after {
                                     width: 100%;
                                 }
 
-                                .side-dropdown-arrow {
-                                    stroke: #A68B5C;
+                            }
+                        }
+
+                        .sol-dropdown {
+                            list-style: none;
+                            margin: 0;
+                            padding: 0;
+                            position: absolute;
+                            left: 112%;
+                            bottom: 0;
+                            min-width: 9.8125rem;
+                            opacity: 0;
+                            transition: all .3s ease-in-out;
+
+                            &.sol-dropdown-active {
+                                opacity: 1;
+                            }
+
+                            .sol-dropdown-item {
+                                border-bottom: 0.06rem solid #453D43;
+                                padding: .5rem 0 .5rem 0;
+                                transition: all 0.3s ease-in-out;
+                                position: relative;
+                                line-height: 1.436rem;
+
+                                a {
+                                    color: #453D43;
+                                    text-decoration: none;
+
+                                    .overview {
+                                        stroke: #453D43;
+                                        margin: 0 0 -.3125rem .625rem;
+                                    }
                                 }
+
+                                &::after {
+                                    content: "";
+                                    background-color: #A68B5C;
+                                    position: absolute;
+                                    height: .06rem;
+                                    width: 0;
+                                    left: 0;
+                                    bottom: -.06rem;
+                                    transition: all .3s ease-in-out;
+                                }
+
+                                &:hover {
+
+                                    a {
+                                        color: #A68B5C;
+
+                                        .overview {
+                                            stroke: #A68B5C;
+                                        }
+                                    }
+
+                                    &::after {
+                                        width: 100%;
+                                    }
+                                }
+                                 
                             }
                         }
                     }
