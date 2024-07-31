@@ -13,6 +13,10 @@ function Header () {
         $('.sub-menu-js').addClass('sub-menu-active');
         $('.menu-item-js').removeClass('menu-item-active');
         $(e.currentTarget).addClass('menu-item-active');
+        var menuItemId = $(e.currentTarget).attr('id');
+        $('.sub-menu-list').removeClass('sub-menu-list-active');
+        $('#' + menuItemId + '-list').addClass('sub-menu-list-active');
+        
     }
 
     function handleHeaderMouseLeave () {
@@ -42,7 +46,7 @@ function Header () {
                 <div className='header-lists'>
                     <div className='header-list'>
                         <ul className='main-menu'>
-                            <li className='menu-item menu-item-js' onMouseOver={handleMenuItemMouseOver}>
+                            <li id='about' className='menu-item menu-item-js' onMouseOver={handleMenuItemMouseOver}>
                                 <a href="#">
                                     About Lunate
                                     <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -50,7 +54,7 @@ function Header () {
                                     </svg>
                                 </a>
                             </li>
-                            <li className='menu-item menu-item-js' onMouseOver={handleMenuItemMouseOver}>
+                            <li id='approach' className='menu-item menu-item-js' onMouseOver={handleMenuItemMouseOver}>
                                 <a href="#">
                                     Our Approach
                                     <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -58,12 +62,12 @@ function Header () {
                                     </svg>
                                 </a>
                             </li>
-                            <li className='menu-item menu-item-js' onMouseOver={handleMenuItemMouseOver}>
+                            <li id='news' className='menu-item menu-item-js' onMouseOver={handleMenuItemMouseOver}>
                                 <a href="#">
                                     News & Insights
                                 </a>
                             </li>
-                            <li className='menu-item menu-item-js' onMouseOver={handleMenuItemMouseOver}>
+                            <li id='careers' className='menu-item menu-item-js' onMouseOver={handleMenuItemMouseOver}>
                                 <a href="#">
                                     Careers
                                 </a>
@@ -85,12 +89,27 @@ function Header () {
 
                     <div className='sub-menu sub-menu-js'>
                         <div className='sub-menu-lists'>
-                            <ul className='sub-menu-list-1'>
+                            <ul id='about-list' className='sub-menu-list'>
                                 <li className='sub-menu-link'>
                                     <a href="#">Who We Are</a>
                                 </li>
                                 <li className='sub-menu-link'>
                                     <a href="#">Our People</a>
+                                </li>
+                            </ul>
+
+                            <ul id='approach-list' className='sub-menu-list'>
+                                <li className='sub-menu-link'>
+                                    <a href="#">Strategies</a>
+                                </li>
+                                <li className='sub-menu-link'>
+                                    <a href="#">Asset Classes</a>
+                                </li>
+                                <li className='sub-menu-link'>
+                                    <a href="#">Solutions & Products</a>
+                                    <svg className='side-dropdown-arrow' width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9 17.9995L15 11.9995L9 5.99951" stroke="#453D43" strokeLinecap="round" strokeLinejoin="round"/>
+                                    </svg>
                                 </li>
                             </ul>
                             <div className='pattern-bg'>
