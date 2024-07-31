@@ -1,5 +1,8 @@
 import '../styles/components/header.scss';
 import pattern1 from '../assets/images/pattern1.png';
+import pattern5 from '../assets/images/pattern5.png';
+import pattern6 from '../assets/images/pattern6.png';
+
 import $ from 'jquery';
 // import { useEffect } from 'react';
 
@@ -8,15 +11,18 @@ function Header () {
     // useEffect(() => {
         
     // }, []);
-
+    //let globalMenuItemId;
     function handleMenuItemMouseOver (e) {
         $('.sub-menu-js').addClass('sub-menu-active');
         $('.menu-item-js').removeClass('menu-item-active');
         $(e.currentTarget).addClass('menu-item-active');
         let menuItemId = $(e.currentTarget).attr('id');
+        //globalMenuItemId = menuItemId;
         $('.sub-menu-list').removeClass('sub-menu-list-active');
         $('#' + menuItemId + '-list').addClass('sub-menu-list-active');
         $('.sol-dropdown').removeClass('sol-dropdown-active');
+        $('.pattern-bg').removeClass('pattern-bg-active');
+        $('#' + menuItemId + '-bg').addClass('pattern-bg-active');
         
     }
 
@@ -158,8 +164,14 @@ function Header () {
                                     <a href="#">Working at Lunate</a>
                                 </li>
                             </ul>
-                            <div className='pattern-bg'>
+                            <div id='about-bg' className='pattern-bg'>
                                 <img src={pattern1} alt="" />
+                            </div>
+                            <div id='news-bg' className='pattern-bg'>
+                                <img src={pattern5} alt="" />
+                            </div>
+                            <div id='careers-bg' className='pattern-bg'>
+                                <img src={pattern6} alt="" />
                             </div>
                             <div className='cross-icon' onClick={handleCrossClick}>
                                 <svg width="60" height="60" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">

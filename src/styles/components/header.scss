@@ -231,6 +231,11 @@
                         position: absolute;
                         top: 0;
                         right: 7.813rem;
+                        display: none;
+
+                        &.pattern-bg-active {
+                            display: block;
+                        }
                     }
 
                     .cross-icon {
