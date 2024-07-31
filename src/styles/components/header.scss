@@ -8,7 +8,7 @@
     height: 10rem;
     overflow: hidden;
 
-    &:has(.sub-menu.active) {
+    &:has(.sub-menu.sub-menu-active) {
         height: 22.5rem;
     }
 
@@ -85,7 +85,7 @@
                 opacity: 0;
                 transition: all .3s ease-in-out;
 
-                &.active {
+                &.sub-menu-active {
                     opacity: 1;
                 }
 
@@ -105,6 +105,8 @@
                             border-bottom: .06rem solid #000;
                             padding: 0 7.14rem 1.25rem 0;
                             margin: 0 0 1.25rem;
+                            transition: all .3s ease-in-out;
+                            position: relative;
 
                             a {
                                 text-decoration: none;
@@ -113,6 +115,30 @@
                                 font-weight: 500;
                                 font-size: 1.125rem;
                                 line-height: 1.436rem;
+                            }
+
+                            
+                            &::after {
+                                content: "";
+                                background-color: #A68B5C;
+                                position: absolute;
+                                height: .06rem;
+                                width: 0;
+                                left: 0;
+                                bottom: -.06rem;
+                                transition: all .3s ease-in-out;
+                            }
+
+                            &:hover {
+                                // border-color: #A68B5C;
+
+                                a {
+                                    color: #A68B5C;
+                                }
+
+                                &::after {
+                                    width: 100%;
+                                }
                             }
                         }
                     }
@@ -132,6 +158,7 @@
                         display: flex;
                         align-items: center;
                         justify-content: center;
+                        cursor: pointer;
                     }
                 }
             }
@@ -179,7 +206,7 @@
                                 }
                             }
 
-                            &:hover:not(.contact-lang) {
+                            &.menu-item-active {
 
                                 a {
                                     color: #A68B5C;
