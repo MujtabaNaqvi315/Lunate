@@ -16,22 +16,33 @@ function Header () {
         var menuItemId = $(e.currentTarget).attr('id');
         $('.sub-menu-list').removeClass('sub-menu-list-active');
         $('#' + menuItemId + '-list').addClass('sub-menu-list-active');
+        $('.sol-dropdown').removeClass('sol-dropdown-active');
         
     }
 
     function handleHeaderMouseLeave () {
         $('.sub-menu-js').removeClass('sub-menu-active');
         $('.menu-item-js').removeClass('menu-item-active');
+        $('.sol-dropdown').removeClass('sol-dropdown-active');
     }
 
     function handleContactLangMouseOver () {
         $('.sub-menu-js').removeClass('sub-menu-active');
         $('.menu-item-js').removeClass('menu-item-active');
+        $('.sol-dropdown').removeClass('sol-dropdown-active');
     } 
 
     function handleCrossClick () {
         $('.sub-menu-js').removeClass('sub-menu-active');
         $('.menu-item-js').removeClass('menu-item-active');
+        $('.sol-dropdown').removeClass('sol-dropdown-active');
+    }
+
+    function handleSubMenuLinkMouseOver (e) {
+        $('.sol-dropdown').removeClass('sol-dropdown-active');
+        if ($(e.currentTarget).hasClass('sol-pro')){
+            $('.sol-dropdown').addClass('sol-dropdown-active');
+        }
     }
 
     return (
@@ -91,22 +102,22 @@ function Header () {
                     <div className='sub-menu sub-menu-js'>
                         <div className='sub-menu-lists'>
                             <ul id='about-list' className='sub-menu-list'>
-                                <li className='sub-menu-link'>
+                                <li className='sub-menu-link' onMouseOver={handleSubMenuLinkMouseOver}>
                                     <a href="#">Who We Are</a>
                                 </li>
-                                <li className='sub-menu-link'>
+                                <li className='sub-menu-link' onMouseOver={handleSubMenuLinkMouseOver}>
                                     <a href="#">Our People</a>
                                 </li>
                             </ul>
 
                             <ul id='approach-list' className='sub-menu-list'>
-                                <li className='sub-menu-link'>
+                                <li className='sub-menu-link' onMouseOver={handleSubMenuLinkMouseOver}>
                                     <a href="#">Strategies</a>
                                 </li>
-                                <li className='sub-menu-link'>
+                                <li className='sub-menu-link' onMouseOver={handleSubMenuLinkMouseOver}>
                                     <a href="#">Asset Classes</a>
                                 </li>
-                                <li className='sub-menu-link'>
+                                <li className='sub-menu-link sol-pro' onMouseOver={handleSubMenuLinkMouseOver}>
                                     <a>
                                         Solutions & Products
                                         <svg className='side-dropdown-arrow' width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -134,16 +145,16 @@ function Header () {
                             </ul>
 
                             <ul id='news-list' className='sub-menu-list'>
-                                <li className='sub-menu-link'>
+                                <li className='sub-menu-link' onMouseOver={handleSubMenuLinkMouseOver}>
                                     <a href="#">News OR Insight 1</a>
                                 </li>
-                                <li className='sub-menu-link'>
+                                <li className='sub-menu-link' onMouseOver={handleSubMenuLinkMouseOver}>
                                     <a href="#">News OR Insight N</a>
                                 </li>
                             </ul>
 
                             <ul id='careers-list' className='sub-menu-list'>
-                                <li className='sub-menu-link'>
+                                <li className='sub-menu-link' onMouseOver={handleSubMenuLinkMouseOver}>
                                     <a href="#">Working at Lunate</a>
                                 </li>
                             </ul>
