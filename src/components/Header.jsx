@@ -8,6 +8,33 @@ function Header () {
     // useEffect(() => {
         
     // }, []);
+
+    // Initial state
+    var scrollPos = 0;
+
+    // Adding scroll event
+    $(window).on('scroll', function() {
+    // Detects new state and compares it with the new one
+    var newScrollPos = $(document).scrollTop();
+    if (newScrollPos <= 0) {
+        console.log('top: ', newScrollPos);
+        $('.header').removeClass('scrollUp');
+        $('.header').removeClass('scrollDown');
+    }
+    else if (newScrollPos > scrollPos) {
+       console.log('down: ', scrollPos);
+       $('.header').removeClass('scrollUp');
+       $('.header').addClass('scrollDown');
+    } else {
+        console.log("up: ", scrollPos);
+        $('.header').removeClass('scrollDown');
+        $('.header').addClass('scrollUp');
+    }
+    // Saves the new position for iteration
+    scrollPos = newScrollPos;
+    });
+
+    
     //let globalMenuItemId;
     function handleMenuItemMouseOver (e) {
         $('.sub-menu-js').addClass('sub-menu-active');
