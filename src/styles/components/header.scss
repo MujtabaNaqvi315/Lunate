@@ -8,6 +8,96 @@
     height: 10rem;
     overflow: hidden;
 
+    &.scrollDown {
+        opacity: 0;
+        visibility: hidden;
+        transition: all .3s ease-in-out;
+    }
+
+    &.scrollUp {
+        background-color: #fff;
+
+        .header-wrapper {
+
+            .header-logo{
+
+                a {
+
+                    svg{
+                        fill: #000;
+                    }
+                }
+            }
+
+            .header-lists {
+
+                .header-list {
+
+                    .main-menu {
+
+                        .menu-item {
+
+                            a {
+                                color: #453D43;
+
+                                svg {
+                                    stroke: #453D43;
+                                }
+                            }
+
+                            &:not(.contact-lang) {
+
+                                a {
+
+                                    svg {
+                                        transition: all .3s ease-in-out;
+                                    }
+                                }
+                            }
+
+                            &.menu-item-active {
+
+                                a {
+                                    color: #A68B5C;
+
+                                    svg {
+                                        stroke: #A68B5C;
+                                        transform: rotate(180deg);
+                                        //transition: all .3s ease-in-out;
+                                    }
+                                }
+                            }
+
+                            &.contact-lang {
+
+                                .contact-link {
+
+                                    &:hover {
+                                        color: #A68B5C;
+
+                                        svg {
+                                            stroke: #A68B5C;
+                                        }
+                                    }
+                                }
+
+                                .lang-links {
+
+                                    a {
+
+                                        &:hover {
+                                            color: #A68B5C;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     &:has(.sub-menu.sub-menu-active) {
         height: 25.5rem;
     }
