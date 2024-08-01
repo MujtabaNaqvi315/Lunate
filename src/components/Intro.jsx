@@ -19,6 +19,20 @@ function Intro () {
                     </a>
                 </div>
             </div>
+            <div className='lower-sec'>
+                <div className='content'>
+                    <h4 className='content-heading'>Partner-led</h4>
+                    <p className='content-description'>Commercial and independent</p>
+                </div>
+                <div className='content'>
+                    <h4 className='content-heading'>150+</h4>
+                    <p className='content-description'>Investment and operating professionals</p>
+                </div>
+                <div className='content'>
+                    <h4 className='content-heading'>3</h4>
+                    <p className='content-description'>Core investment strategies</p>
+                </div>
+            </div>
         </div>
     );
 }

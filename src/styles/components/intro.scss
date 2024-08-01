@@ -1,3 +1,47 @@
 .intro {
     padding: 10rem 6.25rem;
+
+    .upper-sec {
+        margin-bottom: 10rem;
+        display: flex;
+        justify-content: space-between;
+
+        .title-sec {
+            width: 48%;
+            border-top: .06rem solid #A68B5C;
+
+            .small-heading {
+                color: #A68B5C;
+                font-family: 'Space Grotesk', Times, serif;
+                font-weight: 700;
+                font-size: 1.5rem;
+                line-height: 1.914rem;
+                margin-bottom: 2.5rem;
+            }
+
+            .big-heading {
+                font-family: 'Space Grotesk', Times, serif;
+                font-weight: 700;
+                font-size: 3.375rem;
+                line-height: 4.306rem;
+            }
+        }
+
+        .description-sec {
+            width: 48%;
+
+            .description {
+                color: #453D43;
+                font-family: 'Varela';
+                font-weight: 400;
+                font-size: 1.25rem;
+                line-height: 1.875rem;
+            }
+        }
+    }
+
+    .lower-sec {
+        display: flex;
+        justify-content: space-between;
+    }
 }
