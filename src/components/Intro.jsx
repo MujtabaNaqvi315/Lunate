@@ -1,6 +1,7 @@
 import '../styles/components/intro.scss';
 
 function Intro () {
+
     return (
         <div className='intro'>
             <div className='upper-sec'>
