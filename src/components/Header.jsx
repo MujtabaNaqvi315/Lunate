@@ -1,5 +1,8 @@
 import '../styles/components/header.scss';
 import pattern1 from '../assets/images/pattern1.png';
+import pattern2 from '../assets/images/pattern2.png';
+import pattern3 from '../assets/images/pattern3.png';
+import pattern4 from '../assets/images/pattern4.png';
 import pattern5 from '../assets/images/pattern5.png';
 import pattern6 from '../assets/images/pattern6.png';
 
@@ -46,8 +49,13 @@ function Header () {
 
     function handleSubMenuLinkMouseOver (e) {
         $('.sol-dropdown').removeClass('sol-dropdown-active');
-        if ($(e.currentTarget).hasClass('sol-pro')){
-            $('.sol-dropdown').addClass('sol-dropdown-active');
+        if ($(e.currentTarget).hasClass('approach-sub-menu-link')) {
+            if ($(e.currentTarget).hasClass('sol-pro')){
+                $('.sol-dropdown').addClass('sol-dropdown-active');
+            }
+            let approachSubMenuLinkId = $(e.currentTarget).attr('id');
+            $('.pattern-bg').removeClass('pattern-bg-active');
+            $('#' + approachSubMenuLinkId + '-bg').addClass('pattern-bg-active');
         }
     }
 
@@ -117,13 +125,13 @@ function Header () {
                             </ul>
 
                             <ul id='approach-list' className='sub-menu-list'>
-                                <li className='sub-menu-link' onMouseOver={handleSubMenuLinkMouseOver}>
+                                <li id='approach-strategies' className='sub-menu-link approach-sub-menu-link' onMouseOver={handleSubMenuLinkMouseOver}>
                                     <a href="#">Strategies</a>
                                 </li>
-                                <li className='sub-menu-link' onMouseOver={handleSubMenuLinkMouseOver}>
+                                <li id='approach-asset' className='sub-menu-link approach-sub-menu-link' onMouseOver={handleSubMenuLinkMouseOver}>
                                     <a href="#">Asset Classes</a>
                                 </li>
-                                <li className='sub-menu-link sol-pro' onMouseOver={handleSubMenuLinkMouseOver}>
+                                <li id='approach-sol' className='sub-menu-link sol-pro approach-sub-menu-link' onMouseOver={handleSubMenuLinkMouseOver}>
                                     <a>
                                         Solutions & Products
                                         <svg className='side-dropdown-arrow' width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -166,6 +174,18 @@ function Header () {
                             </ul>
                             <div id='about-bg' className='pattern-bg'>
                                 <img src={pattern1} alt="" />
+                            </div>
+                            <div id='approach-bg' className='pattern-bg'>
+                                <img src={pattern2} alt="" />
+                            </div>
+                            <div id='approach-strategies-bg' className='pattern-bg'>
+                                <img src={pattern2} alt="" />
+                            </div>
+                            <div id='approach-asset-bg' className='pattern-bg'>
+                                <img src={pattern3} alt="" />
+                            </div>
+                            <div id='approach-sol-bg' className='pattern-bg'>
+                                <img src={pattern4} alt="" />
                             </div>
                             <div id='news-bg' className='pattern-bg'>
                                 <img src={pattern5} alt="" />
