@@ -64,8 +64,52 @@
                                 border: .06rem solid;
                                 border-radius: 3rem;
 
-                                svg {
+                                .contact-us-arrow {
                                     margin-bottom: -.125rem;
+
+                                    &.on-mouse-in {
+                                        animation-name: animateArrow;
+                                        animation-duration: .3s;
+                                        animation-iteration-count: 1;
+
+                                    }
+
+                                    @keyframes animateArrow {
+                                        0% {
+                                            transform: translateX(0);
+                                        }
+                                        50% {
+                                            transform: translateX(60%);
+                                        }
+                                        51% {
+                                            transform: translateX(-60%);
+                                        }
+                                        100% {
+                                            transform: translateX(0);
+                                        }
+                                    }
+
+                                    &.on-mouse-out {
+                                        animation-name: reverseAnimateArrow;
+                                        animation-duration: .3s;
+                                        animation-iteration-count: 1;
+                                    }
+
+                                    @keyframes reverseAnimateArrow {
+                                        0% {
+                                            transform: translateX(0);
+                                        }
+                                        50% {
+                                            transform: translateX(-60%);
+                                        }
+                                        51% {
+                                            transform: translateX(60%);
+                                        }
+                                        100% {
+                                            transform: translateX(0);
+                                        }
+                                    }
+
                                 }
                             }
 
