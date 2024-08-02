@@ -13,7 +13,12 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
+import { useState } from 'react';
+import { Thumbs } from 'swiper/modules';
+
 function Slider () {
+
+    const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
     function handleExploreLinkMouseEnter () {
         $('.explore-link-arrow-js').removeClass('on-mouse-out');
@@ -47,7 +52,8 @@ function Slider () {
             </div>
             <div className='slider-sec'>
                 <Swiper
-                    modules={[Navigation, Pagination]}
+                    modules={[Navigation, Pagination, Thumbs]}
+                    thumbs={{ swiper: thumbsSwiper }}
                     spaceBetween={50}
                     slidesPerView={1}
                     navigation
@@ -58,11 +64,28 @@ function Slider () {
                         <img className='slider-img' src={slide_1} alt="Slide 1" /> 
                     </SwiperSlide>
                     <SwiperSlide>
-                        <img className='slider-img' src={slide_2} alt="Slide 1" /> 
+                        <img className='slider-img' src={slide_2} alt="Slide 3" /> 
                     </SwiperSlide>
                     <SwiperSlide>
-                        <img className='slider-img' src={slide_3} alt="Slide 1" /> 
+                        <img className='slider-img' src={slide_3} alt="Slide 3" /> 
                     </SwiperSlide>
+                </Swiper>
+
+                <Swiper
+                    modules={[Thumbs]}
+                    watchSlidesProgress
+                    onSwiper={setThumbsSwiper}
+                >
+                    <SwiperSlide> 
+                        Slide 1
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        Slide 2 
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        Slide 3
+                    </SwiperSlide>
+
                 </Swiper>
             </div>
         </div>

@@ -107,14 +107,22 @@
     }
 
     .slider-sec {
+        position: relative;
         .swiper-slide{
             margin-bottom: 9.375rem;
-            
+
             .slider-img {
                 width: 80%;
                 margin-left: 10%;
                 max-height: 39.206rem;
             }
+        }
+
+        .swiper-thumbs {
+            position: absolute;
+            width: 20rem;
+            top: 10rem;
+            left: 5rem;
         }
 
         .swiper-pagination {
