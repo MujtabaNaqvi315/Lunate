@@ -53,6 +53,11 @@
                 .explore-link-span{
                     margin-left: .625rem;
                     overflow: hidden;
+
+                    .explore-link-arrow {
+                        margin-bottom: -.125rem;
+                        fill: #A68B5C;
+                    }
                 }
             }
         }

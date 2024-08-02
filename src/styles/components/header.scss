@@ -77,6 +77,7 @@
                                         color: #A68B5C;
 
                                         svg {
+                                            fill: #A68B5C;
                                             stroke: #A68B5C;
                                         }
                                     }
@@ -161,6 +162,7 @@
 
                                     .contact-us-arrow {
                                         margin: 0 0 -0.125rem;
+                                        fill: #fff;
     
                                         &.on-mouse-in {
                                             animation-name: animateArrow;
@@ -473,6 +475,11 @@
                                         svg {
                                             stroke: #A68B5C;
                                         }
+                                    }
+
+                                    .contact-us-arrow {
+                                        fill: #453D43;
+                                        stroke: #453D43;
                                     }
                                 }
 
