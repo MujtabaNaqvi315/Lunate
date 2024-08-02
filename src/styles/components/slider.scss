@@ -1,3 +1,108 @@
 .slider {
    padding: 10rem 6.25rem 11.875rem;
+   background-color: #9A9194;
+   color: #fff;
+
+   .upper-sec {
+    margin-bottom: 7.5rem;
+    display: flex;
+    justify-content: space-between;
+
+        .title-sec {
+            width: 48%;
+            border-top: .06rem solid;
+
+            .small-heading {
+                font-family: 'Space Grotesk', Times, serif;
+                font-weight: 700;
+                font-size: 1.5rem;
+                line-height: 1.914rem;
+                margin: 2.5rem 0;
+            }
+
+            .big-heading {
+                font-family: 'Space Grotesk', Times, serif;
+                font-weight: 700;
+                font-size: 3.375rem;
+                line-height: 4.306rem;
+            }
+        }
+
+        .description-sec {
+            width: 48%;
+
+            .description {
+                font-family: 'Varela', Times, serif;
+                font-weight: 400;
+                font-size: 1.25rem;
+                line-height: 1.875rem;
+                margin: 0 0 3.75rem;
+            }
+
+            .explore-link {
+                text-decoration: none;
+                color: #fff;
+                padding: 1.406rem 2rem;
+                border: .06rem solid;
+                border-radius: 3rem;
+                font-family: 'Space Grotesk', Times, serif;
+                font-weight: 500;
+                font-size: 1.125rem;
+                line-height: 1.436rem;
+
+                .explore-link-span{
+                    margin-left: .625rem;
+                    overflow: hidden;
+
+                    .explore-link-arrow {
+                        margin-bottom: -.125rem;
+                        fill: #fff;
+
+                        &.on-mouse-in {
+                            animation-name: animateArrow;
+                            animation-duration: .3s;
+                            animation-iteration-count: 1;
+
+                        }
+
+                        @keyframes animateArrow {
+                            0% {
+                                transform: translateX(0);
+                            }
+                            50% {
+                                transform: translateX(60%);
+                            }
+                            51% {
+                                transform: translateX(-60%);
+                            }
+                            100% {
+                                transform: translateX(0);
+                            }
+                        }
+
+                        &.on-mouse-out {
+                            animation-name: reverseAnimateArrow;
+                            animation-duration: .3s;
+                            animation-iteration-count: 1;
+                        }
+
+                        @keyframes reverseAnimateArrow {
+                            0% {
+                                transform: translateX(0);
+                            }
+                            50% {
+                                transform: translateX(-60%);
+                            }
+                            51% {
+                                transform: translateX(60%);
+                            }
+                            100% {
+                                transform: translateX(0);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
