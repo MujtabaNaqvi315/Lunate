@@ -16,7 +16,7 @@
                 font-weight: 700;
                 font-size: 1.5rem;
                 line-height: 1.914rem;
-                margin-bottom: 2.5rem;
+                margin: 2.5rem 0;
             }
 
             .big-heading {
@@ -36,7 +36,24 @@
                 font-weight: 400;
                 font-size: 1.25rem;
                 line-height: 1.875rem;
-                margin: 0;
+                margin: 0 0 3.75rem;
+            }
+
+            .explore-link {
+                color: #A68B5C;
+                text-decoration: none;
+                padding: 1.406rem 2rem;
+                border: .06rem solid;
+                border-radius: 3rem;
+                font-family: 'Space Grotesk', Times, serif;
+                font-weight: 500;
+                font-size: 1.125rem;
+                line-height: 1.436rem;
+
+                .explore-link-span{
+                    margin-left: .625rem;
+                    overflow: hidden;
+                }
             }
         }
     }
