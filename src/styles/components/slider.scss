@@ -105,4 +105,21 @@
             }
         }
     }
+
+    .slider-sec {
+        .swiper-slide{
+            margin-bottom: 9.375rem;
+            
+            .slider-img {
+                width: 80%;
+                margin-left: 10%;
+                max-height: 39.206rem;
+            }
+        }
+
+        .swiper-pagination {
+            top: unset;
+            bottom: 0px;
+        }
+    }
 }

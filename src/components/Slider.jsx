@@ -1,6 +1,18 @@
 import '../styles/components/slider.scss';
 import $ from 'jquery';
 
+import slide_1 from '../assets/images/slide_1.webp';
+import slide_2 from '../assets/images/slide_2.webp';
+import slide_3 from '../assets/images/slide_3.webp';
+
+import { Navigation, Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
 function Slider () {
 
     function handleExploreLinkMouseEnter () {
@@ -12,6 +24,7 @@ function Slider () {
         $('.explore-link-arrow-js').removeClass('on-mouse-in');
         $('.explore-link-arrow-js').addClass('on-mouse-out');
     }
+
 
     return (
         <div className='slider'>
@@ -31,6 +44,26 @@ function Slider () {
                         </span>
                     </a>
                 </div>
+            </div>
+            <div className='slider-sec'>
+                <Swiper
+                    modules={[Navigation, Pagination]}
+                    spaceBetween={50}
+                    slidesPerView={1}
+                    navigation
+                    pagination={{ clickable: true, type: 'progressbar' }}
+                    loop = 'true'
+                >
+                    <SwiperSlide> 
+                        <img className='slider-img' src={slide_1} alt="Slide 1" /> 
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <img className='slider-img' src={slide_2} alt="Slide 1" /> 
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <img className='slider-img' src={slide_3} alt="Slide 1" /> 
+                    </SwiperSlide>
+                </Swiper>
             </div>
         </div>
     );
