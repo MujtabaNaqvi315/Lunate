@@ -32,7 +32,7 @@
 
             .description {
                 color: #453D43;
-                font-family: "Varela", Times, serif;
+                font-family: 'Varela', Times, serif;
                 font-weight: 400;
                 font-size: 1.25rem;
                 line-height: 1.875rem;
@@ -61,5 +61,32 @@
     .lower-sec {
         display: flex;
         justify-content: space-between;
+
+        .content {
+            flex: 1;
+            text-align: center;
+            
+            &:not(:last-of-type) {
+                border-right: .06rem solid #A68B5C;
+            }
+
+            .content-heading {
+                color: #A68B5C;
+                font-family: 'Space Grotesk', Times, serif;
+                font-weight: 700;
+                font-size: 5.625rem;
+                line-height: 7.178rem;
+                margin: 0 0 1.25rem;
+            }
+
+            .content-description {
+                font-family:'Varela', Times, serif;
+                font-weight: 400;
+                font-size: 2rem;
+                line-height: 2.625rem;
+                margin: 0;
+                padding: 0 5rem;
+            }
+        }
     }
 }
