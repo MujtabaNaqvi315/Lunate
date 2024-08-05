@@ -108,16 +108,72 @@
 
     .slider-sec {
         position: relative;
-        .swiper-slide{
-            margin-bottom: 9.375rem;
 
-            .slider-img {
-                width: 80%;
-                margin-left: 10%;
-                max-height: 39.206rem;
+        .swiper {
+             
+            &:not(.swiper-thumbs ){
+                
+                .swiper-slide{
+                    margin-bottom: 9.375rem;
+        
+                    .slider-img {
+                        width: 80%;
+                        margin-left: 10%;
+                        max-height: 39.206rem;
+                    }
+                }
+
+                .swiper-button-prev {
+                    top: unset;
+                    bottom: 0;
+                    right: 4.5rem;
+                    left: unset;
+                    width: 3.75rem;
+                    height: 3.75rem;
+                    border: .06rem solid #fff;
+                    border-radius: 50%;
+
+                    &::after {
+                        content: url('../../assets/images/prev_arrow_svg.svg');
+                        margin-bottom: 1.15rem;
+                    }
+                }
+
+                .swiper-button-next {
+                    right: 0;
+                    bottom: 0;
+                    top: unset;
+                    width: 3.75rem;
+                    height: 3.75rem;
+                    border: .06rem solid #fff;
+                    border-radius: 50%;
+
+                    &::after {
+                        content: url('../../assets/images/next_arrow_svg.svg');
+                        margin-bottom: 1.15rem;
+                    }
+                }
+
+                .swiper-pagination {
+                    top: unset;
+                    bottom: 0px;
+                    max-width: 51.25rem;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    background: none;
+                    border-top: .06rem solid #F2E8D9;
+
+                    .swiper-pagination-progressbar-fill {
+                        height: 0.25rem;
+                        background: #E0D4BC;
+                        top: unset;
+                        bottom: 0.11rem;
+                    }
+                }
             }
         }
-
+        
+        
         .swiper-thumbs {
             position: absolute;
             width: 20rem;
@@ -125,9 +181,5 @@
             left: 5rem;
         }
 
-        .swiper-pagination {
-            top: unset;
-            bottom: 0px;
-        }
     }
 }

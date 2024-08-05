@@ -17,19 +17,17 @@ function Header () {
     // Detects new state and compares it with the new one
     var newScrollPos = $(document).scrollTop();
     if (newScrollPos <= 0) {
-        console.log('top: ', newScrollPos);
+
         $('.header').removeClass('scrollUp');
         $('.header').removeClass('scrollDown');
     }
     else if (newScrollPos > scrollPos) {
-        console.log('down: ', scrollPos);
         $('.header').removeClass('scrollUp');
         $('.header').addClass('scrollDown');
         $('.sub-menu-js').removeClass('sub-menu-active');
         $('.menu-item-js').removeClass('menu-item-active');
         $('.sol-dropdown').removeClass('sol-dropdown-active');
     } else {
-        console.log("up: ", scrollPos);
         $('.header').removeClass('scrollDown');
         $('.header').addClass('scrollUp');
     }
