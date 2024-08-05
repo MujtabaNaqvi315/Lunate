@@ -31,8 +31,10 @@ function Slider () {
         $('.explore-link-arrow-js').addClass('on-mouse-out');
     }
 
+
     function handleNextButtonClick () {
         // console.log("next" + swiperRef.current);
+
         if (swiperRef.current) {
             swiperRef.current.swiper.slideNext();
         } 
@@ -43,6 +45,7 @@ function Slider () {
 
     function handlePrevButtonClick () {
         // console.log("prev" + swiperRef.current);
+
         if (swiperRef.current) {
             swiperRef.current.swiper.slidePrev();
         } 
@@ -74,9 +77,8 @@ function Slider () {
             <div className='slider-sec'>
                 <Swiper
                     modules={[Thumbs]}
-                    watchSlidesProgress
                     onSwiper={setThumbsSwiper}
-                    loop = 'true'
+                    loop = {true}
                 >
                     <SwiperSlide> 
                         <h4 className='slide-heading'>Asset Classes</h4>
@@ -100,7 +102,7 @@ function Slider () {
                     slidesPerView={1}
                     navigation
                     pagination={{ clickable: true, type: 'progressbar' }}
-                    loop = 'true'
+                    loop = {true}
                 >
                     <SwiperSlide> 
                         <img className='slider-img' src={slide_1} alt="Slide 1" /> 
