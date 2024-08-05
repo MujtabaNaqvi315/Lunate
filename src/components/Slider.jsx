@@ -52,6 +52,26 @@ function Slider () {
             </div>
             <div className='slider-sec'>
                 <Swiper
+                    modules={[Thumbs]}
+                    watchSlidesProgress
+                    onSwiper={setThumbsSwiper}
+                    loop = 'true'
+                >
+                    <SwiperSlide> 
+                        <h4 className='slide-heading'>Asset Classes</h4>
+                        <p className='slide-description'>We invest across asset classes, including Private Equity, Venture Capital, Credit, Real Assets, GP Stakes, and Public Markets.</p>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <h4 className='slide-heading'>Investment Strategies</h4>
+                        <p className='slide-description'>We deploy capital through a broad spectrum of strategies, including Fund Investments, Direct and Co-Investments, Long-Term Capital, Special Opportunities, and Climate Investments</p>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <h4 className='slide-heading'>Solutions</h4>
+                        <p className='slide-description'>We primarily manage private markets-focused customised portfolios for our clients, seeking to deliver tailored solutions with superior risk-adjusted returns. We also manage and/or co-manage private markets commingled funds. We are the leading ETF manager in the MENA region.</p>
+                    </SwiperSlide>
+                </Swiper>
+
+                <Swiper
                     modules={[Navigation, Pagination, Thumbs]}
                     thumbs={{ swiper: thumbsSwiper }}
                     spaceBetween={50}
@@ -69,23 +89,6 @@ function Slider () {
                     <SwiperSlide>
                         <img className='slider-img' src={slide_3} alt="Slide 3" /> 
                     </SwiperSlide>
-                </Swiper>
-
-                <Swiper
-                    modules={[Thumbs]}
-                    watchSlidesProgress
-                    onSwiper={setThumbsSwiper}
-                >
-                    <SwiperSlide> 
-                        Slide 1
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        Slide 2 
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        Slide 3
-                    </SwiperSlide>
-
                 </Swiper>
             </div>
         </div>
