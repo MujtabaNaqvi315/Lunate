@@ -127,33 +127,37 @@
                 }
 
                 .swiper-button-prev {
-                    top: unset;
-                    bottom: 0;
-                    right: 4.5rem;
-                    left: unset;
-                    width: 3.75rem;
-                    height: 3.75rem;
-                    border: .06rem solid #fff;
-                    border-radius: 50%;
+                    // top: unset;
+                    // bottom: 0;
+                    // right: 4.5rem;
+                    // left: unset;
+                    // width: 3.75rem;
+                    // height: 3.75rem;
+                    // border: .06rem solid #fff;
+                    // border-radius: 50%;
+                    display: none;
 
                     &::after {
-                        content: url('../../assets/images/prev_arrow_svg.svg');
-                        margin-bottom: 1.15rem;
+                        // content: url('../../assets/images/prev_arrow_svg.svg');
+                        // margin-bottom: 1.15rem;
+                        content: '';
                     }
                 }
 
                 .swiper-button-next {
-                    right: 0;
-                    bottom: 0;
-                    top: unset;
-                    width: 3.75rem;
-                    height: 3.75rem;
-                    border: .06rem solid #fff;
-                    border-radius: 50%;
+                    // right: 0;
+                    // bottom: 0;
+                    // top: unset;
+                    // width: 3.75rem;
+                    // height: 3.75rem;
+                    // border: .06rem solid #fff;
+                    // border-radius: 50%;
+                    display: none;
 
                     &::after {
-                        content: url('../../assets/images/next_arrow_svg.svg');
-                        margin-bottom: 1.15rem;
+                        // content: url('../../assets/images/next_arrow_svg.svg');
+                        // margin-bottom: 1.15rem;
+                        content: '';
                     }
                 }
 
@@ -202,5 +206,25 @@
             }
         }
 
+    }
+
+    .nav-btns {
+        display: flex;
+        column-gap: .625rem;
+        justify-content: flex-end;
+        margin-top: -5rem;
+        z-index: 2;
+        position: relative;
+
+        .prev-btn,
+        .next-btn {
+            width: 3.75rem;
+            height: 3.75rem;
+            border: .06rem solid #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
     }
 }

@@ -5,7 +5,7 @@ import slide_1 from '../assets/images/slide_1.webp';
 import slide_2 from '../assets/images/slide_2.webp';
 import slide_3 from '../assets/images/slide_3.webp';
 
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation, Pagination, Thumbs } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
@@ -13,12 +13,13 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-import { useState } from 'react';
-import { Thumbs } from 'swiper/modules';
+import { useState, useRef } from 'react';
 
 function Slider () {
 
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
+
+    const swiperRef = useRef(null);
 
     function handleExploreLinkMouseEnter () {
         $('.explore-link-arrow-js').removeClass('on-mouse-out');
@@ -28,6 +29,26 @@ function Slider () {
     function handleExploreLinkMouseLeave () {
         $('.explore-link-arrow-js').removeClass('on-mouse-in');
         $('.explore-link-arrow-js').addClass('on-mouse-out');
+    }
+
+    function handleNextButtonClick () {
+        // console.log("next" + swiperRef.current);
+        if (swiperRef.current) {
+            swiperRef.current.swiper.slideNext();
+        } 
+        // else {
+        //     console.error("next Swiper instance not found");
+        // }
+    }
+
+    function handlePrevButtonClick () {
+        // console.log("prev" + swiperRef.current);
+        if (swiperRef.current) {
+            swiperRef.current.swiper.slidePrev();
+        } 
+        // else {
+        //     console.error("prev Swiper instance not found");
+        // }
     }
 
 
@@ -72,6 +93,7 @@ function Slider () {
                 </Swiper>
 
                 <Swiper
+                    ref={swiperRef}
                     modules={[Navigation, Pagination, Thumbs]}
                     thumbs={{ swiper: thumbsSwiper }}
                     spaceBetween={50}
@@ -90,6 +112,39 @@ function Slider () {
                         <img className='slider-img' src={slide_3} alt="Slide 3" /> 
                     </SwiperSlide>
                 </Swiper>
+            </div>
+            <div className='nav-btns'>
+                <div className='prev-btn' onClick={handlePrevButtonClick}>
+
+                    {/* <svg width="1.5rem" height="1.563rem" viewBox="0 0 1.5rem 1.563rem" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_8208_3755)">
+                            <path d="M15 18.2891L9 12.2891L15 6.28906" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_8208_3755">
+                                <rect width="1.5rem" height="1.5rem" fill="white" transform="matrix(-1 0 0 1 1.5rem 0.289062)"/>
+                            </clipPath>
+                        </defs>
+                    </svg> */}
+                    <svg width=".5rem" height=".875rem" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 13.2891L1 7.28906L7 1.28906" stroke="white" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                </div>
+                <div className='next-btn' onClick={handleNextButtonClick}>
+                    {/* <svg width="1.5rem" height="1.563rem" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_8208_5694)">
+                            <path d="M9 18.2891L15 12.2891L9 6.28906" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_8208_5694">
+                                <rect width="1.5rem" height="1.5rem" fill="white" transform="translate(0 0.289062)"/>
+                            </clipPath>
+                        </defs>
+                    </svg> */}
+                    <svg width=".5rem" height=".875rem" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 13.2891L7 7.28906L1 1.28906" stroke="white" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                </div>
             </div>
         </div>
     );
