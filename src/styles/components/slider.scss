@@ -113,7 +113,7 @@
 
         .swiper {
              
-            &:not(.swiper-thumbs ){
+            &:not(:first-of-type){
                 width: 60%;
                 
                 .swiper-slide{
@@ -126,40 +126,40 @@
                     }
                 }
 
-                .swiper-button-prev {
-                    // top: unset;
-                    // bottom: 0;
-                    // right: 4.5rem;
-                    // left: unset;
-                    // width: 3.75rem;
-                    // height: 3.75rem;
-                    // border: .06rem solid #fff;
-                    // border-radius: 50%;
-                    display: none;
+                // .swiper-button-prev {
+                //     // top: unset;
+                //     // bottom: 0;
+                //     // right: 4.5rem;
+                //     // left: unset;
+                //     // width: 3.75rem;
+                //     // height: 3.75rem;
+                //     // border: .06rem solid #fff;
+                //     // border-radius: 50%;
+                //     display: none;
 
-                    &::after {
-                        // content: url('../../assets/images/prev_arrow_svg.svg');
-                        // margin-bottom: 1.15rem;
-                        content: '';
-                    }
-                }
+                //     &::after {
+                //         // content: url('../../assets/images/prev_arrow_svg.svg');
+                //         // margin-bottom: 1.15rem;
+                //         content: '';
+                //     }
+                // }
 
-                .swiper-button-next {
-                    // right: 0;
-                    // bottom: 0;
-                    // top: unset;
-                    // width: 3.75rem;
-                    // height: 3.75rem;
-                    // border: .06rem solid #fff;
-                    // border-radius: 50%;
-                    display: none;
+                // .swiper-button-next {
+                //     // right: 0;
+                //     // bottom: 0;
+                //     // top: unset;
+                //     // width: 3.75rem;
+                //     // height: 3.75rem;
+                //     // border: .06rem solid #fff;
+                //     // border-radius: 50%;
+                //     display: none;
 
-                    &::after {
-                        // content: url('../../assets/images/next_arrow_svg.svg');
-                        // margin-bottom: 1.15rem;
-                        content: '';
-                    }
-                }
+                //     &::after {
+                //         // content: url('../../assets/images/next_arrow_svg.svg');
+                //         // margin-bottom: 1.15rem;
+                //         content: '';
+                //     }
+                // }
 
                 .swiper-pagination {
                     top: unset;
@@ -178,33 +178,34 @@
                     }
                 }
             }
+
+            &:first-of-type {
+                // position: absolute;
+                // width: 32.5rem;
+                // top: 10rem;
+                // left: 5rem;
+                width: 40%;
+                padding-top: 13.313rem;
+    
+                .slide-heading {
+                    font-family: 'Inter', Times, serif;
+                    font-weight: 700;
+                    font-size: 2.5rem;
+                    line-height: 3.026rem;
+                    margin: 0 0 2.5rem 0;
+                }
+    
+                .slide-description {
+                    font-family: 'Inter', Times, serif;
+                    font-weight: 400;
+                    font-size: 1.5rem;
+                    line-height: 1.816rem;
+                    margin: 0;
+                }
+            }
         }
         
         
-        .swiper-thumbs {
-            // position: absolute;
-            // width: 32.5rem;
-            // top: 10rem;
-            // left: 5rem;
-            width: 40%;
-            padding-top: 13.313rem;
-
-            .slide-heading {
-                font-family: 'Inter', Times, serif;
-                font-weight: 700;
-                font-size: 2.5rem;
-                line-height: 3.026rem;
-                margin: 0 0 2.5rem 0;
-            }
-
-            .slide-description {
-                font-family: 'Inter', Times, serif;
-                font-weight: 400;
-                font-size: 1.5rem;
-                line-height: 1.816rem;
-                margin: 0;
-            }
-        }
 
     }
 

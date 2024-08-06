@@ -5,7 +5,7 @@ import slide_1 from '../assets/images/slide_1.webp';
 import slide_2 from '../assets/images/slide_2.webp';
 import slide_3 from '../assets/images/slide_3.webp';
 
-import { Navigation, Pagination, Thumbs } from 'swiper/modules';
+import { Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
@@ -13,12 +13,13 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-import { useState, useRef } from 'react';
+import { useRef } from 'react';
 
 function Slider () {
 
-    const [thumbsSwiper, setThumbsSwiper] = useState(null);
+    // const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
+    const swiperRef0 = useRef(null);
     const swiperRef = useRef(null);
 
     function handleExploreLinkMouseEnter () {
@@ -36,6 +37,7 @@ function Slider () {
         // console.log("next" + swiperRef.current);
 
         if (swiperRef.current) {
+            swiperRef0.current.swiper.slideNext();
             swiperRef.current.swiper.slideNext();
         } 
         // else {
@@ -47,6 +49,7 @@ function Slider () {
         // console.log("prev" + swiperRef.current);
 
         if (swiperRef.current) {
+            swiperRef0.current.swiper.slidePrev();
             swiperRef.current.swiper.slidePrev();
         } 
         // else {
@@ -76,9 +79,10 @@ function Slider () {
             </div>
             <div className='slider-sec'>
                 <Swiper
-                    modules={[Thumbs]}
-                    onSwiper={setThumbsSwiper}
+                    // modules={[Thumbs]}
+                    // onSwiper={setThumbsSwiper}
                     loop = {true}
+                    ref={swiperRef0}
                 >
                     <SwiperSlide> 
                         <h4 className='slide-heading'>Asset Classes</h4>
@@ -96,11 +100,11 @@ function Slider () {
 
                 <Swiper
                     ref={swiperRef}
-                    modules={[Navigation, Pagination, Thumbs]}
-                    thumbs={{ swiper: thumbsSwiper }}
+                    modules={[Pagination]}
+                    // thumbs={{ swiper: thumbsSwiper }}
                     spaceBetween={50}
                     slidesPerView={1}
-                    navigation
+                    // navigation
                     pagination={{ clickable: true, type: 'progressbar' }}
                     loop = {true}
                 >
