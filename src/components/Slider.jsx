@@ -5,22 +5,39 @@ import slide_1 from '../assets/images/slide_1.webp';
 import slide_2 from '../assets/images/slide_2.webp';
 import slide_3 from '../assets/images/slide_3.webp';
 
-import { Pagination } from 'swiper/modules';
+import { Scrollbar } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
 import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+// import 'swiper/css/navigation';
+// import 'swiper/css/pagination';
 
-import { useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 function Slider () {
 
     // const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
+    const [progress, setProgress] = useState(0);
+
     const swiperRef0 = useRef(null);
     const swiperRef = useRef(null);
+
+    useEffect(() => {
+        if (swiperRef.current) {
+            const swiperInstance = swiperRef.current.swiper;
+
+            // Ensure the scrollbar element is available after initialization
+            if (swiperInstance && swiperInstance.scrollbar.el) {
+                const scrollbarEl = swiperInstance.scrollbar.el;
+                const progressVal = translateVal(scrollbarEl);
+                setProgress(progressVal);
+            } else {
+                console.error('Swiper or scrollbar element is not available during initialization.');
+            }
+        }
+    }, []);
 
     function handleExploreLinkMouseEnter () {
         $('.explore-link-arrow-js').removeClass('on-mouse-out');
@@ -57,6 +74,34 @@ function Slider () {
         // }
     }
 
+    function handleSlideChange () {
+        if (swiperRef.current) {
+            updateProgress();
+        }
+    }
+
+    function updateProgress () {
+        if (swiperRef.current && swiperRef.current.swiper.scrollbar.el) {
+            const scrollbarEl = swiperRef.current.swiper.scrollbar.el;
+            const progressVal = translateVal(scrollbarEl);
+            setProgress(progressVal);
+        } else {
+            console.error('Swiper or scrollbar element is not available.');
+        }
+    }
+
+    function translateVal (el) {
+
+        if (!el || !(el instanceof HTMLElement)) {
+            console.error('The provided element is not valid:', el);
+            return 0;
+        }
+
+        const transform = window.getComputedStyle(el).transform;
+        const match = transform.match(/translate3d\((.+)px,(.+)px,(.+)px\)/);
+        return match ? parseFloat(match[1]) : 0;
+    }
+
 
     return (
         <div className='slider'>
@@ -83,6 +128,7 @@ function Slider () {
                     // onSwiper={setThumbsSwiper}
                     loop = {true}
                     ref={swiperRef0}
+                    allowTouchMove = {false}
                 >
                     <SwiperSlide> 
                         <h4 className='slide-heading'>Asset Classes</h4>
@@ -100,13 +146,23 @@ function Slider () {
 
                 <Swiper
                     ref={swiperRef}
-                    modules={[Pagination]}
+                    modules={[Scrollbar]}
+                    scrollbar={{
+                        el: '.slider-scrollbar',
+                        draggable: false,
+                        hide: false,
+                        snapOnRelease: false,
+                        
+                    }}
+                    onSlideChange={handleSlideChange}
+                    onInit={handleSlideChange}
                     // thumbs={{ swiper: thumbsSwiper }}
                     spaceBetween={50}
                     slidesPerView={1}
                     // navigation
-                    pagination={{ clickable: true, type: 'progressbar' }}
+                    //pagination={{ clickable: true, type: 'progressbar' }}
                     loop = {true}
+                    allowTouchMove = {false}
                 >
                     <SwiperSlide> 
                         <img className='slider-img' src={slide_1} alt="Slide 1" /> 
@@ -151,6 +207,12 @@ function Slider () {
                         <path d="M1 13.2891L7 7.28906L1 1.28906" stroke="white" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                 </div>
+            </div>
+
+            <div className="slider-progress-wrap">
+                <div className="slider-progress"></div>
+                {/* <div className="slider-progress2" style={{ width: progress + 'px' }}></div> */}
+                <div className="slider-scrollbar"></div>
             </div>
         </div>
     );
